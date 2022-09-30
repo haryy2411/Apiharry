@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Adactin hotel</td>
+      <td>18 Jul 2022, 16:42</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">AddressStep.userShouldAddHeaderAndBearerAuthorizationForAccessingAddressEndpoints()</td>
+              <td>4</td>
+              <td class="duration" data-value="1462800">0.001</td>
+              <td class="duration" data-value="1462800">0.001</td>
+              <td class="duration" data-value="5851200">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldAddRequestBodyForAddNewAddressAnd(String,String,String,String,String,String,String,String,String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="92866400">0.092</td>
+              <td class="duration" data-value="92866400">0.092</td>
+              <td class="duration" data-value="92866400">0.092</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldAddRequestBodyForAddUpdateAddressAnd(String,String,String,String,String,String,String,String,String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="12194400">0.012</td>
+              <td class="duration" data-value="12194400">0.012</td>
+              <td class="duration" data-value="12194400">0.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldAddRequestBodyForDeleteAddressAddress_id()</td>
+              <td>1</td>
+              <td class="duration" data-value="10948800">0.010</td>
+              <td class="duration" data-value="10948800">0.010</td>
+              <td class="duration" data-value="10948800">0.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldSendRequestForAddNewAddress(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3255973300">3.255</td>
+              <td class="duration" data-value="3255973300">3.255</td>
+              <td class="duration" data-value="3255973300">3.255</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldSendRequestForAddUpdateAddress(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2639638400">2.639</td>
+              <td class="duration" data-value="2639638400">2.639</td>
+              <td class="duration" data-value="2639638400">2.639</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldSendRequestForDeleteAddress(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3054155400">3.054</td>
+              <td class="duration" data-value="3054155400">3.054</td>
+              <td class="duration" data-value="3054155400">3.054</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldSendRequestForGetAddress(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2859804400">2.859</td>
+              <td class="duration" data-value="2859804400">2.859</td>
+              <td class="duration" data-value="2859804400">2.859</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldVerifyTheCreatedAddressResponseMessageMatches(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="5802800">0.005</td>
+              <td class="duration" data-value="5802800">0.005</td>
+              <td class="duration" data-value="5802800">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldVerifyTheDeleteAddressResponseMessageMatches(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="4194300">0.004</td>
+              <td class="duration" data-value="4194300">0.004</td>
+              <td class="duration" data-value="4194300">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldVerifyTheGetAddressResponseMessageMatches(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="21840400">0.021</td>
+              <td class="duration" data-value="21840400">0.021</td>
+              <td class="duration" data-value="21840400">0.021</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">AddressStep.userShouldVerifyTheUpdateAddressResponseMessageMatches(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="4165600">0.004</td>
+              <td class="duration" data-value="4165600">0.004</td>
+              <td class="duration" data-value="4165600">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">ChangeProfilePicStep.userAddHeaderAndBearerAuthorizationAndMultipartFormDataForAccessingChangeprofilepicEndpoints()</td>
+              <td>1</td>
+              <td class="duration" data-value="15189400">0.015</td>
+              <td class="duration" data-value="15189400">0.015</td>
+              <td class="duration" data-value="15189400">0.015</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">ChangeProfilePicStep.userSendRequestForChangeprofilepic(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3444615000">3.444</td>
+              <td class="duration" data-value="3444615000">3.444</td>
+              <td class="duration" data-value="3444615000">3.444</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">ChangeProfilePicStep.userVerifyTheDeleteAddressResponseMessageMatches(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="14076600">0.014</td>
+              <td class="duration" data-value="14076600">0.014</td>
+              <td class="duration" data-value="14076600">0.014</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">CommonStep.userShouldVerifyTheStatusCodeIs(int)</td>
+              <td>6</td>
+              <td class="duration" data-value="523600">0.000</td>
+              <td class="duration" data-value="523600">0.002</td>
+              <td class="duration" data-value="3141600">0.003</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">LoginStep.userAddBasicAuthenticationForLogin()</td>
+              <td>1</td>
+              <td class="duration" data-value="84302700">0.084</td>
+              <td class="duration" data-value="84302700">0.084</td>
+              <td class="duration" data-value="84302700">0.084</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">LoginStep.userAddHeader()</td>
+              <td>1</td>
+              <td class="duration" data-value="937377200">0.937</td>
+              <td class="duration" data-value="937377200">0.937</td>
+              <td class="duration" data-value="937377200">0.937</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">LoginStep.userSendRequestForLoginEndpoint(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="5238750100">5.238</td>
+              <td class="duration" data-value="5238750100">5.238</td>
+              <td class="duration" data-value="5238750100">5.238</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">LoginStep.userVerifyTheLoginResponseBodyFirstnamePresentAsAndGetTheLogtoken(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="296619400">0.296</td>
+              <td class="duration" data-value="296619400">0.296</td>
+              <td class="duration" data-value="296619400">0.296</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>20</td>
+            <td>28</td>
+            <td class="duration">0.785</td>
+            <td class="duration">5.238</td>
+            <td class="duration">22.001</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
